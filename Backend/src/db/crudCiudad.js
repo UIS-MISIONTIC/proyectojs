@@ -42,7 +42,6 @@ function addCiudad(ciudad, callback){
     })
 }
 module.exports = {
-
     getAerolinea,
     getCiudad,
     addCiudad

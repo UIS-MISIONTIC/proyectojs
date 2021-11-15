@@ -4,9 +4,9 @@ const app = express();
 
 const db = require('./src/db/crudCiudad.js');
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
-app.use(express.json());
+//app.use(express.json());
 
 app.get('/Welcome', function (req, res) {
     res.send('Bienvenido a la pagina oficial de aerolineas vuelaFacil')
