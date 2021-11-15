@@ -20,7 +20,30 @@ function getAerolinea(callback){
             callback(`Error getting documents: ${err}`);
         });
 }
+
+function getCiudad(idCiudad, callback){
+    return db.collection('ciudad').doc(idCiudad).get()
+    .then((doc)=>{
+        callback(doc.data())
+    })
+    .catch((err)=>{
+        callback(`Error getting a document from ciudad: ${err}`);
+
+    })
+}
+
+function addCiudad(ciudad, callback){
+    return db.collection('ciudad').add(ciudad)
+    .then(()=>{
+        callback('Ciudad y datos adicionales agregados exitosamente')
+    })
+    .catch(()=>{
+        callback(`Error adding the city: ${err}`);
+    })
+}
 module.exports = {
 
-    getAerolinea
+    getAerolinea,
+    getCiudad,
+    addCiudad
 }
