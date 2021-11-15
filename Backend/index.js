@@ -1,10 +1,26 @@
+const express = require('express');
+
+const app = express();
+
 const db = require('./src/db/crud.js');
 
+app.use(express.static('public'));
 
-db.getAerolinea();
+app.get('/Welcome', function (req, res) {
+    res.send('Bienvenido a la pagina oficial de aerolineas vuelaFacil')
+  });
 
-var app = require('./app');
+  app.get('/Any-Interface', function (req, res) {
+    res.send('This is for getting any interface')
+  });
+   
+//app.listen(3000);
+//   console.log("Server is running ok");
+
+// db.getAerolinea();
+
+// var app = require('./app');
 var port = 4000;
 app.listen(port, () =>{
-    console.log("Server is running ok");
+    console.log("Server is running into 4000 port ok");
 });
