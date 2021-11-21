@@ -21,6 +21,8 @@ function getAerolinea(callback){
         });
 }
 
+// Read one document from a collection
+
 function getCiudad(idCiudad, callback){
     return db.collection('ciudad').doc(idCiudad).get()
     .then((doc)=>{
@@ -32,6 +34,8 @@ function getCiudad(idCiudad, callback){
     })
 }
 
+// Create or insert a document into collection
+
 function addCiudad(ciudad, callback){
     return db.collection('ciudad').add(ciudad)
     .then(()=>{
@@ -41,8 +45,50 @@ function addCiudad(ciudad, callback){
         callback(`Error adding the city: ${err}`);
     })
 }
+
+// Update replacing data
+
+function updateCiudadTotally(idCiudad, ciudad, callback){
+    return db.collection('ciudad').doc(idCiudad).set(ciudad)
+    .then(()=>{
+        callback("The entire city successfully updated")
+    })
+    .catch(()=>{
+        callback(`Error updating the city: ${err}`);
+    })
+}
+
+// Update replacing specific data
+
+function updateCiudadPart(idCiudad, ciudad, callback){
+    return db.collection('ciudad').doc(idCiudad).update(ciudad)
+    .then(()=>{
+        callback("Part of city successfully updated")
+    })
+    .catch(()=>{
+        callback(`Error updating the city: ${err}`);
+    })
+}
+
+// Remove a document
+
+function deleteCiudad(idCiudad, callback){
+    return db.collection('ciudad').doc(idCiudad).delete()
+    .then(()=>{
+        callback("City successfully removed")
+    })
+    .catch(()=>{
+        callback(`Error deleting the city: ${err}`);
+    })
+}
+
+//Falta busqueda por ciudad
+
 module.exports = {
     getAerolinea,
     getCiudad,
-    addCiudad
+    addCiudad,
+    updateCiudadTotally,
+    updateCiudadPart,
+    deleteCiudad
 }
