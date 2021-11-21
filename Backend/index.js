@@ -4,6 +4,8 @@ const app = express();
 
 const db = require('./src/db/crudCiudad.js');
 
+const dbP = require('./src/db/crudPasajero.js');
+
 //app.use(express.static('public'));
 
 app.use(express.json());
@@ -63,6 +65,52 @@ app.delete('/deleteCiudad/:id', (req, res)=>{
   })
 })
 
+app.get('/getPasajeroAll', function(req, res){
+
+  dbP.getPasajeroAll(function(arrayPasajero){
+
+    res.send(arrayPasajero);
+
+  })
+
+});
+
+app.get('/getPasajero/:id', function(req, res){
+  const idPasajero = req.params.id;
+  dbP.getPasajero(idPasajero, function(pasajero){
+    res.json(pasajero);
+  })
+})
+
+app.post('/addPasajero', (req, res)=>{
+  const pasajero = req.body;
+  dbP.addPasajero(pasajero, function(response){
+    res.send(response);
+  })
+})
+
+ app.put('/updatePasajeroEntire/:id', (req, res)=>{
+   const idPasajero = req.params.id;
+   const pasajero = req.body;
+   dbP.updatePasajeroEntire(idPasajero, pasajero, function(response){
+     res.send(response);
+   })
+ })  
+
+ app.patch('/updatePasajeroPart/:id', (req, res)=>{
+  const idPasajero = req.params.id;
+  const pasajero = req.body;
+  dbP.updatePasajeroPart(idPasajero, pasajero, function(response){
+    res.send(response);
+  })
+})  
+
+app.delete('/deletePasajero/:id', (req, res)=>{
+  const idPasajero = req.params.id;
+  dbP.deletePasajero(idPasajero, function(response){
+    res.send(response);
+  })
+})
 // app.listen(3000);
 //   console.log("Server is running ok");
 
