@@ -20,7 +20,7 @@ function YourForm() {
     }
   return (
       
-    <form><h2 style={yourStyle}>Ingresar datos de orígenes y destinos </h2>
+    <form><h4 style={yourStyle}>Ingresar datos de orígenes y destinos </h4>
      <label style={estiloLabel}>Aeropuerto:
         <input type="text" />
       </label>

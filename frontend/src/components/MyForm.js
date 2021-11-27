@@ -20,7 +20,7 @@ function MyForm() {
     }
   return (
       
-    <form><h2 style={myStyle}>Ingresar datos del itinerario de vuelo</h2>
+    <form><h4 style={myStyle}>Ingresar datos del itinerario de vuelo</h4>
     <label style={estilosLabel}>Ciudad de orígen:
         <input type="text" />
       </label>
