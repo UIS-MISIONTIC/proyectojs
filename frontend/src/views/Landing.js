@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Table from "../components/Table";
+
 const Landing = () =>{
     return (
         <>
 
-        <h1>Landing</h1>
+        <Table/>
 
 
         </>

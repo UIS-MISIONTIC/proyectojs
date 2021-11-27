@@ -1,12 +1,14 @@
 import React from 'react';
 
+import HomePasajero from "../components/HomePasajero";
+
 const Home = () =>{
     return (
         <>
 
-        <h1>Home</h1>
+        <HomePasajero/>
 
-        
+
         </>
     )
 }

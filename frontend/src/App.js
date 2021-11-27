@@ -1,10 +1,6 @@
 import React from "react";
 
-// import MyForm from "./components/MyForm";
-
-// import YourForm from "./components/YourForm";
-
-// import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,7 +16,7 @@ import Search from "./views/SearchOutcomes";
 
 import NotFound from "./views/NotFound";
 
-import NavBar from "./components/NavBar";
+
 
 function App() {
   return (
@@ -32,8 +28,8 @@ function App() {
     <Routes>
 
     <Route path = "*" element = {<NotFound/>}/>
-    <Route path = "/" element = {<Home/>}/>
-    <Route path = "/landing" element = {<Landing/>}/>
+    <Route path = "/" element = {<Landing/>}/>
+    <Route path = "/home" element = {<Home/>}/>
     <Route path = "/register" element = {<Register/>}/>
     <Route path = "/search" element = {<Search/>}/>
     
