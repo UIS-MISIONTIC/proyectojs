@@ -1,56 +1,82 @@
+// Import FirebaseAuth and firebase.
 import React from 'react';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
-import {Form, Button, Stack, Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Stack, Image} from 'react-bootstrap';
+
+import image from "../assets/images/airplane.jpg";
+
+// Configure Firebase.
+const config = {
+  apiKey: "AIzaSyCdKFSa6r0AM4Xo-781lg0fIeOwX1IQoLo",
+  authDomain: "vuelafacil2021.firebaseapp.com",
+  projectId: "vuelafacil2021",
+  storageBucket: "vuelafacil2021.appspot.com",
+  messagingSenderId: "634843765095",
+  appId: "1:634843765095:web:a11ea02a0787294eed37c2",
+  measurementId: "G-EGQSGW83VH"
+};
+firebase.initializeApp(config);
+
+// Configure FirebaseUI.
+const uiConfig = {
+  // Popup signin flow rather than redirect flow.
+  signInFlow: 'popup',
+  // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+  signInSuccessUrl: '/home',
+  // We will display Google and Facebook as auth providers.
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+  ],
+
+  callbacks: {
+    // Avoid redirects after sign-in.
+    signInSuccessWithAuthResult: (authResult) => {
+
+      const obj = {
+
+        "id" : authResult.user.uid,
+        "email" : authResult.user.email,
+
+      }
+
+      localStorage.setItem('data', JSON.stringify(obj));
+
+      return true;
+
+    },
+  },
+};
 
 function MyForm() {
-
-
   return (
-      <>
+
+    <>
 
 <Container>
   <Row>
     <Col>
     <Stack gap={3} className="align-items-center">
+        
+  <Image src= {image}/>
 
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div>
+    
+    <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
 
-    <Form>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Correo electronico:</Form.Label>
-      <Form.Control type="email" placeholder="ingresa tu dirreccion de correo" />
-      <Form.Text className="text-muted">
-        Nunca compartiremos tu direccion de correo con alguien mas.
-      </Form.Text>
-    </Form.Group>
-  
-    <Form.Group className="mb-3" controlId="formBasicPassword">
-      <Form.Label>Contraseña:</Form.Label>
-      <Form.Control type="password" placeholder="Contraseña" />
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check type="checkbox" label="No soy un robot" />
-    </Form.Group>
-    <Button variant="primary" type="submit">
-      Enviar
-    </Button>
-  </Form>
-  </Stack>
-  </Col>
+    </div>
+
+    </Stack>
+    </Col>
   </Row>
-  </Container>
+</Container>
 
-  </>
-  )
+    </>
+
+  );
 }
-
-//ReactDOM.render(<MyForm />, document.getElementById('root'));
 
 export default MyForm

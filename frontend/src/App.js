@@ -16,8 +16,6 @@ import Search from "./views/SearchOutcomes";
 
 import NotFound from "./views/NotFound";
 
-
-
 function App() {
   return (
 
@@ -33,7 +31,6 @@ function App() {
     <Route path = "/register" element = {<Register/>}/>
     <Route path = "/search" element = {<Search/>}/>
     
-
     </Routes>
     
     </BrowserRouter>
@@ -43,7 +40,6 @@ function App() {
 
 // <MyForm></MyForm>
 
-  
 // <YourForm></YourForm>
 //     </React.Fragment>
     
