@@ -6,7 +6,7 @@ const apiRoutes = require('./routes');
 
 //app.use(express.static('public'));
 
-app.use(express.json());
+app.use(express.json(''));
 
 apiRoutes(app);
 

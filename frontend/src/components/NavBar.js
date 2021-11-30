@@ -12,15 +12,21 @@ const NavBar = () => {
                  
         }
 
+        const CerrarSesion = () => {
+
+          localStorage.removeItem('data')
+
+        }
+            
     return (
         <>
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="home" style={nbStyle}>Home</Navbar.Brand>
+  <Navbar.Brand href="/home" style={nbStyle}>Home</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#features" style={nbStyle}>Vuelos</Nav.Link>
+      <Nav.Link href="/" style={nbStyle}>Vuelos</Nav.Link>
       <Nav.Link href="#pricing" style={nbStyle}>Paquetes</Nav.Link>
       <NavDropdown title="" id="collasible-nav-dropdown" menuVariant="dark">
 
@@ -32,16 +38,17 @@ const NavBar = () => {
 
     </Nav>
     <Nav>
-      <Nav.Link href="#deets" style={nbStyle}>Buscador de Vuelos</Nav.Link>
+      <Nav.Link href="#deets" style={nbStyle}>Buscar vuelos</Nav.Link>
       <Nav.Link eventKey={2} href="#memes" style={nbStyle}>
-        Confirmar reserva
+        Reservar
       </Nav.Link>
       <Nav.Link href="#deets" style={nbStyle}>Pagar</Nav.Link>
+      <Nav.Link href="/register" style={nbStyle} onClick={CerrarSesion}>Salir</Nav.Link>
     </Nav>
   </Navbar.Collapse>
   </Container>
 </Navbar>
 </>
     )
-}
+    }  
 export default NavBar

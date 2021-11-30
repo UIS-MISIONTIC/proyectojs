@@ -6,7 +6,7 @@ import 'firebase/compat/auth';
 
 import {Container, Row, Col, Stack, Image} from 'react-bootstrap';
 
-import image from "../assets/images/airplane.jpg";
+import image from "../assets/image/airplane.jpg";
 
 // Configure Firebase.
 const config = {
@@ -30,6 +30,7 @@ const uiConfig = {
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
 
   callbacks: {

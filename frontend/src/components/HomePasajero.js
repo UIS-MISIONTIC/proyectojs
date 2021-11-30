@@ -2,10 +2,10 @@ import React from 'react';
 
 import {Container, Row, Col, Stack, Image} from 'react-bootstrap';
 
-import image from "../assets/images/airplane.jpg";
+import image from "../assets/image/airplane.jpg";
 
 const HomePasajero = () =>{
-  
+
   const user = JSON.parse(localStorage.getItem('data'));
     return (
         <>
@@ -20,9 +20,32 @@ const HomePasajero = () =>{
   <div></div>
   <div></div>
  
-  <div className="bg-light border">UIS MISION TIC 2022</div>
-  <div className="bg-light border">Universidad Industrial de Santander</div>
-  <div className="bg-light border">Bucaramanga - Santander</div>
+  <div className="bg-light border">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+ 
+  <div></div>
+  <div></div>
+
+  <div></div>
+  <div></div>
+ 
+  <div className="bg-light border">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+ 
+  <div></div>
+  <div></div>
+
+  <div></div>
+  <div></div>
+ 
+  <div className="bg-light border">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+ 
+  <div></div>
+  <div></div>
+
+  <div></div>
+  <div></div>
+ 
+  <div className="bg-light border">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+ 
   <div></div>
   <div></div>
 
@@ -34,5 +57,4 @@ const HomePasajero = () =>{
       </>
     )
 }
-
 export default HomePasajero
