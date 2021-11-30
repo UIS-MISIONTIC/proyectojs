@@ -4,17 +4,19 @@ import HomePasajero from "../components/HomePasajero";
 
 import { Navigate } from 'react-router-dom';
 
-const Home = () =>{
+const Home = ()  => {
 
-    if (localStorage.getItem('data')  == undefined){
+var contentHome = <Navigate to = "/register"/>
 
-        return <Navigate to = "/"/>;
+    if (localStorage.getItem('data') != undefined){
+
+        contentHome = <HomePasajero/>
 
     }
     return (
         <>
 
-        <HomePasajero/>
+        {contentHome}
 
 
         </>

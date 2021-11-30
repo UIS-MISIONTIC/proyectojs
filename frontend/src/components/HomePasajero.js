@@ -5,6 +5,8 @@ import {Container, Row, Col, Stack, Image} from 'react-bootstrap';
 import image from "../assets/images/airplane.jpg";
 
 const HomePasajero = () =>{
+  
+  const user = JSON.parse(localStorage.getItem('data'));
     return (
         <>
 

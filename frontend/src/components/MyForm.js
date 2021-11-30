@@ -28,8 +28,8 @@ const uiConfig = {
   signInSuccessUrl: '/home',
   // We will display Google and Facebook as auth providers.
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID
-    //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
   ],
 
   callbacks: {
@@ -40,6 +40,7 @@ const uiConfig = {
 
         "id" : authResult.user.uid,
         "email" : authResult.user.email,
+        "facebook" : authResult.user.facebook,
 
       }
 
