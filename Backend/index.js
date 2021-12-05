@@ -8,7 +8,7 @@ const apiRoutes = require('./routes');
 
 const port = process.env.PORT || 8080;
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 app.use(express.json());
 
