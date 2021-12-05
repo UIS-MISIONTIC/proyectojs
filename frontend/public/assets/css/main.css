@@ -222,18 +222,7 @@ input, select, textarea {
     -ms-transition: -ms-transform 1s ease, opacity 1s ease;
     transition: transform 1s ease, opacity 1s ease;
     background-repeat: repeat-x;
-
-
-
-
-
-
-
-
-
-
-
--x;                                                 background-size: 4rem;
+    background-size: 4rem;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.4);/*color del nav seprod 04 es la opacidad*/
     height: 4rem;
@@ -4741,7 +4730,6 @@ input, select, textarea {
 			right: 0;
 			text-align: right;
 			top: 0;
-			vertical-align: middle;
 			width: 7rem;
 		}
 
@@ -4870,10 +4858,7 @@ input, select, textarea {
     background-color: #FF5F00;
 }
 
-#botonrol {
-	
-	
-}
+
 
 
 
@@ -5075,8 +5060,7 @@ CONTENT
 	
 	-moz-border-radius-topleft: 5px;
 	-moz-border-radius-bottomleft: 5px;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-bottom-left-radius: 5px;
+	
 }
 
 .user-icon {
@@ -5368,8 +5352,7 @@ CONTENT
 	
 	-moz-border-radius-topleft: 5px;
 	-moz-border-radius-bottomleft: 5px;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-bottom-left-radius: 5px;
+	
 }
 
 .user-icon {

@@ -1,5 +1,8 @@
 var express = require('express');
+
 var app = express();
+
+var cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -14,5 +17,4 @@ app.use((req, res, next)=>{
     next();
 
 });
-
 module.exports = app;

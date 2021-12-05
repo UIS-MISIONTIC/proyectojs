@@ -1,64 +1,71 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-import {Table} from 'react-bootstrap';
+import axios from 'axios';
 
-function MyTable() {
+import * as ReactBootStrap from 'react-bootstrap';
 
+
+const MyTable = () => {
+
+  const [posts, getPosts] = useState ({ blogs: []})
+
+  useEffect(()=>{
+
+    const fetchPostList = async ()=>{
+
+       const {data} = await axios('http://localhost:4000/vuelo')
+
+       getPosts({blogs: data})
+
+       console.log(data)
+    }
+    fetchPostList()
+
+  },[getPosts])
 
   return (
     <>
 
-  <Table striped bordered hover variant="dark">
+  <ReactBootStrap.Table striped bordered hover variant="dark">
   <thead>
     <tr>
-      <th>Codigo</th>
-      <th>Itinerario</th>
+      <th>Aeronave</th>
+      <th>CódigoVuelo</th>
+      <th>Cupo</th>
+      <th>Destino</th>
+      <th>Llegada</th>
+      <th>Origen</th>
       <th>Salida</th>
-      <th>LLegada</th>
+      <th>TipoAvión</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Bogota-Cartagena</td>
-      <td>16/12/2021 06:35:00</td>
-      <td>16/12/2021 08:30:00</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Bogota-Cartagena</td>
-      <td>16/12/2021 06:35:00</td>
-      <td>16/12/2021 08:30:00</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Bogota-Cartagena</td>
-      <td>16/12/2021 06:35:00</td>
-      <td>16/12/2021 08:30:00</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Bogota-Cartagena</td>
-      <td>16/12/2021 06:35:00</td>
-      <td>16/12/2021 08:30:00</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Bogota-Cartagena</td>
-      <td>16/12/2021 06:35:00</td>
-      <td>16/12/2021 08:30:00</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Bogota-Cartagena</td>
-      <td>16/12/2021 06:35:00</td>
-      <td>16/12/2021 08:30:00</td>
-    </tr>
-  </tbody>
-</Table>
+  <tbody>{
 
+    posts.blogs && posts.blogs.map((item) => (
+
+    
+
+      <tr key={item.id}>
+      <td>{item.Aeronave}</td>
+      <td>{item.CódigoVuelo}</td>
+      <td>{item.Cupo}</td>
+      <td>{item.Destino}</td>
+      <td>{item.Llegada}</td>
+      <td>{item.Origen}</td>
+      <td>{item.Salida}</td>
+      <td>{item.TipoAvión}</td>
+     
+      </tr>
+           
+    ))}
+  </tbody>
+</ReactBootStrap.Table>
     </>
-  )
+  );
+//})
+//}
 }
 export default MyTable
 
+
+  

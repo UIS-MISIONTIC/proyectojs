@@ -6,6 +6,7 @@ import { Navigate } from 'react-router-dom';
 
 const Landing = () =>{
 
+   
     var contentLanding = <Navigate to = "/register"/>
 
     if (localStorage.getItem('data') != undefined){
@@ -17,7 +18,6 @@ const Landing = () =>{
         <>
 
         {contentLanding}
-
 
         </>
     )

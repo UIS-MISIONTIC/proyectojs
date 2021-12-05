@@ -37,13 +37,7 @@ function App() {
     
     </BrowserRouter>
 
-//     <React.Fragment>
-// <NavBar></NavBar>
 
-// <MyForm></MyForm>
-
-// <YourForm></YourForm>
-//     </React.Fragment>
     
   );
 }

@@ -43,12 +43,12 @@ const NavBar = () => {
         Reservar
       </Nav.Link>
       <Nav.Link href="#deets" style={nbStyle}>Pagar</Nav.Link>
+      <Nav.Link href="#deets" style={nbStyle}>Portal</Nav.Link>
       <Nav.Link href="/register" style={nbStyle} onClick={CerrarSesion}>Salir</Nav.Link>
     </Nav>
   </Navbar.Collapse>
   </Container>
 </Navbar>
 </>
-    )
-    }  
+    ) }  
 export default NavBar
