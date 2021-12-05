@@ -10,7 +10,8 @@
 .runtimeconfig.json
 .firebase/
 
-
+### Firestore Key ###
+vuelafacil2021-fd081e754bb2.json
 
 ### Linux ###
 *~
@@ -224,5 +225,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
 # End of https://www.toptal.com/developers/gitignore/api/firebase,node,windows,macos,linux,react
