@@ -1,20 +1,20 @@
-// var express = require('express');
+var express = require('express');
 
-// var app = express();
+var app = express();
 
-// var cors = require('cors');
+var cors = require('cors');
 
-// app.use(express.json());
-// app.use(express.urlencoded({
-//     extended: true
-// }));
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
 
-// app.use((req, res, next)=>{
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-//     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-//     next();
+app.use((req, res, next)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
 
-// });
-// module.exports = app;
+});
+module.exports = app;
