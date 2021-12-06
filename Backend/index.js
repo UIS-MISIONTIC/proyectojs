@@ -19,6 +19,5 @@ apiRoutes(app);
 
 app.listen(port, () =>{
 
-    console.log("Server is running into 4000 port ok");
-    //CHOOSED HEROKU port ok");
+    console.log("Server is running CHOOSED HEROKU port ok");
 });
