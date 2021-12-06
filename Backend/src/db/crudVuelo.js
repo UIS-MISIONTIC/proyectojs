@@ -73,7 +73,7 @@ function updateVueloPart(idVuelo, vuelo, callback){
 // Remove a document
 
 function deleteVuelo(idVuelo, callback){
-    return db.collection('vuelo').doc(idVuelo).delete()
+    return dbV.collection('vuelo').doc(idVuelo).delete()
     .then(()=>{
         callback("Flight successfully removed")
     })
