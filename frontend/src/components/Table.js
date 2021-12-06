@@ -13,7 +13,7 @@ const MyTable = () => {
 
     const fetchPostList = async ()=>{
 
-       const {data} = await axios('http://localhost:4000/vuelo')
+       const {data} = await axios('https://proyectojs-backend.herokuapp.com/vuelo')
 
        getPosts({blogs: data})
 
@@ -62,8 +62,6 @@ const MyTable = () => {
 </ReactBootStrap.Table>
     </>
   );
-//})
-//}
 }
 export default MyTable
 
